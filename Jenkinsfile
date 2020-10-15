@@ -50,7 +50,7 @@ node () {
    stage('Lifecycle Evaluation'){
     // postGitHub commitId, 'pending', 'analysis', 'Nexus Lifecycle Analysis is running'
 
-      def policyEvaluationResult = nexusPolicyEvaluation failBuildOnNetworkError: false, iqApplication: 'struts2-rce', iqStage: 'stage-release', jobCredentialsId: ''
+      def policyEvaluationResult = nexusPolicyEvaluation failBuildOnNetworkError: false, iqScanPatterns: [[scanPattern: 'target/*.war']], iqApplication: 'struts2-rce-github', iqStage: 'stage-release', jobCredentialsId: ''
     
    }
    
